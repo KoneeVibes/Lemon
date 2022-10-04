@@ -74,7 +74,7 @@ const Header = ({mainText, subText, illustration}) => {
             <ul>
                 <a href='#'><li className='space-between'>Home</li></a>
                 <li className='space-between'>Projects</li>
-                <li className='space-between'>Work With Us </li>
+                <a href='#book-a-session'><li className='space-between'>Work With Us </li></a>
                 <a href='#about-us'><li className='space-between'>About Us</li></a>
                 <a href='#footer'><li className='space-between'>Contact</li></a>
             </ul>
