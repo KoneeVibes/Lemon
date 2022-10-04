@@ -11,11 +11,17 @@ const Button = styled.button`
     font-family: Clash Display;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
+
+    a{
+      text-decoration: none;
+      color: #FFF;
+    }
 `
 
 const StartBuildingButton = ({text}) => {
   return (
-    <Button>{text}</Button>
+    <Button><a href='#book-a-session'>{text}</a></Button>
   )
 }
 

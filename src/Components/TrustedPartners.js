@@ -6,18 +6,31 @@ import RabbitHoleLogo from '../Assets/RabbitHoleLogo.png'
 
 const TrustedPartnersWrapper = styled.div`
     padding: 0 136.57px;
-    text-align: center;
+    // text-align: center;
 
     .logos{
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 2em;
+        
+        // responsive screen design to make it's content justified;
+        // justify-content: center;
+        
+    }
+
+    .logos > :first-child{
+        // margin-left: -2em;
     }
 
     .logos img{
-        margin-right: 1em;
+        margin-right: 5px;
+    }
+
+    h4{
+        font-family: Clash Display;
+        font-size: 27px;
+        font-weight: 500;
+        line-height: 33px;
     }
 `
 

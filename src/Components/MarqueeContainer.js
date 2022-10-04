@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const MarqueeWrapper = styled.marquee`
 
     height: 91px;
-    background: #1B1232;
 
     h4{
         font-family: Clash Display;
@@ -13,10 +12,10 @@ const MarqueeWrapper = styled.marquee`
     }
 `
 
-const MarqueeContainer = () => {
+const MarqueeContainer = ({bgColor}) => {
   return (
-    <MarqueeWrapper>
-          <h4>Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency.</h4>
+    <MarqueeWrapper style={{backgroundColor: bgColor}}>
+      <h4>Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency.</h4>
     </MarqueeWrapper>
   )
 }
