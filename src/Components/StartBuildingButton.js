@@ -21,7 +21,7 @@ const Button = styled.button`
 
 const StartBuildingButton = ({text}) => {
   return (
-    <Button><a href='#book-a-session'>{text}</a></Button>
+      <a href='#book-a-session'><Button>{text}</Button></a>
   )
 }
 

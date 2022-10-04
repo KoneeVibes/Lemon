@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { InlineWidget } from "react-calendly";
 
 const BookSessionWrapper = styled.div`
     padding: 136.57px;
@@ -10,6 +11,7 @@ const BookSessionWrapper = styled.div`
         font-size: 50px;
         font-weight: 600;
         line-height: 50px;
+        margin-block-start: 0;
     }
 
     .text-content p{
@@ -21,10 +23,13 @@ const BookSessionWrapper = styled.div`
 
     .text-content{
         flex: 55%;
+        margin-right: 4em;
     }
 
     .calendly-booking{
         flex: 45%;
+        position: relative;
+        height: 500px;
     }
 
 `
@@ -38,8 +43,7 @@ const BookSession = () => {
         </div>
 
         <div className='calendly-booking'>
-            <h3>Monday</h3>
-            <p>November 21, 2022</p>
+            <InlineWidget url="https://calendly.com/koneevibes" />
         </div>
     </BookSessionWrapper>
   )

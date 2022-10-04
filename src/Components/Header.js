@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import LemonLogo from '../Assets/LemonLogo.png'
 import BackgroundStars from '../Assets/BackgroundStars.png'
 import StartBuildingButton from './StartBuildingButton'
+import { Link } from 'react-router-dom'
 
 const HeaderWrapper = styled.header`
      
@@ -59,6 +60,10 @@ const HeaderWrapper = styled.header`
         flex: 0.30;
     }
 
+    .header-main section{
+        flex: 0.70;
+    }
+
     a{
         text-decoration: none;
         color: #FFF;
@@ -72,8 +77,8 @@ const Header = ({mainText, subText, illustration}) => {
         <nav>
             <img src={LemonLogo} alt='logo of lemon'></img>
             <ul>
-                <a href='#'><li className='space-between'>Home</li></a>
-                <li className='space-between'>Projects</li>
+                <Link to='/'><li className='space-between'>Home</li></Link>
+                <Link to='/projects'><li className='space-between'>Projects</li></Link>
                 <a href='#book-a-session'><li className='space-between'>Work With Us </li></a>
                 <a href='#about-us'><li className='space-between'>About Us</li></a>
                 <a href='#footer'><li className='space-between'>Contact</li></a>
