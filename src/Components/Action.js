@@ -37,7 +37,7 @@ const ActionWrapper = styled.div`
     
 `
 
-const Action = ({bgColor, src}) => {
+const Action = ({bgColor, src, color}) => {
 
   let image = useRef(null)
 
@@ -49,7 +49,7 @@ const Action = ({bgColor, src}) => {
   })
 
   return (
-    <ActionWrapper>
+    <ActionWrapper style={{color: color}}>
       <div className='action-box' style={{backgroundColor: bgColor}}>
         <h2>Workshop with experts</h2>
         <div>

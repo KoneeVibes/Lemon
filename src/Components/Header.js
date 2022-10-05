@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import LemonLogo from '../Assets/LemonLogo.png'
 import BackgroundStars from '../Assets/BackgroundStars.png'
 import StartBuildingButton from './StartBuildingButton'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 
 const HeaderWrapper = styled.header`
      
@@ -53,15 +54,15 @@ const HeaderWrapper = styled.header`
 
     .header-main section{
         flex: 0.70;
-        margin-right: 136.57px;
+        margin-right: 100px;
     }
 
     .header-main img{
-        flex: 0.30;
+        flex: 0.3;
     }
 
     .header-main section{
-        flex: 0.70;
+        flex: 0.7;
     }
 
     a{
@@ -80,7 +81,7 @@ const Header = ({mainText, subText, illustration}) => {
                 <Link to='/'><li className='space-between'>Home</li></Link>
                 <Link to='/projects'><li className='space-between'>Projects</li></Link>
                 <a href='#book-a-session'><li className='space-between'>Work With Us </li></a>
-                <a href='#about-us'><li className='space-between'>About Us</li></a>
+                <a href='/#about-us'><li className='space-between'>About Us</li></a>
                 <a href='#footer'><li className='space-between'>Contact</li></a>
             </ul>
         </nav>

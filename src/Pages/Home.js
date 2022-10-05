@@ -24,7 +24,7 @@ const Home = () => {
           <ActionStatement/>
           <TrustedPartners/>
           <Services/>
-          <Action bgColor={'#5413C1'} src={HomeActionBorder}/>
+          <Action bgColor={'#5413C1'} src={HomeActionBorder} color={'#FFFFFF'}/>
           <SubscriptionBox/>
           <BookSession/>
           <MarqueeContainer/>
