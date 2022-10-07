@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import ConvertKitForm from 'convertkit-react'
 
 const SubscriptionBoxWrapper = styled.div`
 
@@ -14,7 +15,7 @@ const SubscriptionBoxWrapper = styled.div`
         margin-block-end: 0;
     }
 
-    .input-box{
+    .form{
         margin: 0 431px;
         border: 2px solid #FFFFFF;
         border-radius: 37px; 
@@ -24,7 +25,7 @@ const SubscriptionBoxWrapper = styled.div`
         align-items: center;
     }
 
-    .input-box input{
+    .form input{
         background: #020203;
         border: none;
         height: 18px;
@@ -33,7 +34,7 @@ const SubscriptionBoxWrapper = styled.div`
         outline: none;
     }
 
-    .input-box button{
+    .form button{
         background: #EB5757;
         border-radius: 31px;
         padding: 10px 26.5px;
@@ -51,15 +52,42 @@ const SubscriptionBoxWrapper = styled.div`
         line-height: 28px;
     }
 
+    #ck-first-name {
+        display:none;
+    }
+
+    #ck-email {
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
 `
 
 const SubscriptionBox = () => {
 
+    const MY_FORM_ID = 3677346
+    // const MY_FORM_ID = `${process.env.REACT_APP_CONVERTKIT}`
+    console.log(MY_FORM_ID)
+
+    const config = {
+        formId: MY_FORM_ID,
+        emailPlaceholder: 'Enter your email address',
+    }
+
+    window.onload = function () {
+        if (!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
+
     useEffect(() => {
 
         const standardText = document.querySelector('.width').textContent;
-        const inputBox = document.querySelector('.input-box');
-      
+        const inputBox = document.querySelector('.form');
+
         function displayTextWidth(text, font) {
             let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));
             let context = canvas.getContext("2d");
@@ -69,21 +97,19 @@ const SubscriptionBox = () => {
             return metrics.width;
         }
 
-        displayTextWidth(standardText, "24px Inter"); 
+        displayTextWidth(standardText, "24px Inter")
+        
     })
-    
-  return (
-    <SubscriptionBoxWrapper>
-        <div>
-            <h2>Never miss a drop</h2>
-            <p className='width'>Subscribe for the latest news, drops & collectibles</p>
-            <div className='input-box'>
-                <input placeholder='Enter your email address '></input>
-                <button>Subscribe</button>
+
+    return (
+        <SubscriptionBoxWrapper id='newsletter-subscription'>
+            <div>
+                <h2>Never miss a drop</h2>
+                <p className='width'>Subscribe for the latest news, drops & collectibles</p>
+                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
             </div>
-        </div>
-    </SubscriptionBoxWrapper>
-  )
+        </SubscriptionBoxWrapper>
+    )
 }
 
 export default SubscriptionBox

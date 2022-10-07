@@ -30,7 +30,6 @@ const BookSessionWrapper = styled.div`
     .calendly-booking{
         flex: 45%;
         position: relative;
-        // height: 500px;
         opacity: 0.8;
     }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -21,7 +22,7 @@ const Button = styled.button`
 
 const StartBuildingButton = ({text}) => {
   return (
-      <a href='#book-a-session'><Button>{text}</Button></a>
+      <HashLink to='#book-a-session' smooth><Button>{text}</Button></HashLink>
   )
 }
 

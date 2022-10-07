@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import video1 from '../Assets/Video1.png'
-import video2 from '../Assets/Video2.png'
-import video3 from '../Assets/Video3.png'
+import video1 from '../Assets/Animation1.mp4'
+import video2 from '../Assets/Animation2.mp4'
+import video3 from '../Assets/Animation3.mov'
+import video4 from '../Assets/Animation4.mp4'
 
 const VideosWrapper = styled.section`
-    padding: 75px;
-    padding-bottom: 136.57px;
+    padding: 136.57px;
 
     h3{
         font-family: Poppins;
@@ -27,41 +27,64 @@ const VideosWrapper = styled.section`
     .row-top{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-bottom: 6em;
+        margin-bottom: 4em;
     }
 
     .row-bottom{
         display: flex;
-        justify-content: space-between;
+        align-items: center;
     }
+
+    .row-top > :first-child, .row-bottom > :first-child{
+        margin-right: 6em;
+    }
+
+    .center-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
 `
 
 const Videos = () => {
+
+    useEffect(() => {
+      
+        const videos = document.querySelectorAll('video');
+        
+        videos.forEach(video => video.addEventListener('mouseenter', (e) => e.target.play()))
+        videos.forEach(video => video.addEventListener('mouseout', (e) => e.target.pause() ))
+        
+    })
+    
   return (
     <VideosWrapper>
-        <div className='row-top'>
-            <div>
-                <img src={video1} alt='video'></img>
-                <h3>User interface</h3>
-                <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
-            </div>
-            <div>
-                <img src={video2} alt='video'></img>
-                <h3>User interface</h3>
-                <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+        <div className='center-wrapper'>
+            <div className='row-top'>
+                <div>
+                    <video src={video1} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <h3>User interface</h3>
+                    <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+                </div>
+                <div>
+                    <video src={video2} alt='video' width="570px" height="480px" muted="muted" loop ></video>
+                    <h3>User interface</h3>
+                    <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+                </div>
             </div>
         </div>
-        <div className='row-bottom'>
-            <div>
-                <img src={video3} alt='video'></img>
-                <h3>User interface</h3>
-                <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
-            </div>
-            <div>
-                <img src={video1} alt='video'></img>
-                <h3>User interface</h3>
-                <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+        <div className='center-wrapper'>
+            <div className='row-bottom'>
+                <div>
+                    <video src={video3} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <h3>User interface</h3>
+                    <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+                </div>
+                <div>
+                    <video src={video4} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <h3>User interface</h3>
+                    <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
+                </div>
             </div>
         </div>
     </VideosWrapper>

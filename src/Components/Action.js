@@ -40,12 +40,16 @@ const ActionWrapper = styled.div`
 const Action = ({bgColor, src, color}) => {
 
   let image = useRef(null)
-
+  
   useEffect(() => {
-    const border = document.querySelector('.action-box');
-    image.current.style.width = border.getBoundingClientRect().width + "px";
 
-    // find a way to manually cause a rerender if the border width ever changes
+    function borderResize(){
+      const border = document.querySelector('.action-box');
+      image.current.style.width = border.getBoundingClientRect().width + "px";
+    }
+
+    window.addEventListener('resize', borderResize);
+    borderResize();
   })
 
   return (
