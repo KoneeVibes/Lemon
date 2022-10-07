@@ -67,9 +67,7 @@ const SubscriptionBoxWrapper = styled.div`
 
 const SubscriptionBox = () => {
 
-    const MY_FORM_ID = 3677346
-    // const MY_FORM_ID = `${process.env.REACT_APP_CONVERTKIT}`
-    console.log(MY_FORM_ID)
+    const MY_FORM_ID = `${process.env.REACT_APP_CONVERTKIT}`
 
     const config = {
         formId: MY_FORM_ID,
