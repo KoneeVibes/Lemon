@@ -15,6 +15,7 @@ const HeaderWrapper = styled.header`
         display: flex;
         align-items: center;
         justify-content: space-between;
+        min-height: var(--min-navbar-height);
     }
 
     nav ul{
@@ -26,7 +27,6 @@ const HeaderWrapper = styled.header`
         padding-inline-start: 0; 
         text-align: center;
         gap: 100px;
-        // min-height: 70px;
     }
 
     .header-main{
@@ -88,11 +88,6 @@ const HeaderWrapper = styled.header`
         background-color: #FFF;
     }
 
-    img{
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-    }
-
     .logo-hamburger-flexbox{
         display: flex;
         align-items: center;
@@ -119,7 +114,7 @@ const HeaderWrapper = styled.header`
         nav ul{
             position: fixed;
             left: -100%;
-            top: 70px;
+            top: var(--min-navbar-height);
             gap: 50px;
             width: 100%;
             height: 100%;
@@ -173,14 +168,14 @@ const Header = ({mainText, subText, illustration, padding}) => {
         if (isActive) {
             header.style.background = '#020203'
          }else{
-            header.style.background = '';
+            header.style.background = `url(${BackgroundStars}), linear-gradient(180deg, #0F172B 0%, #5413C1 64.58%)`;
          } 
 
         document.querySelectorAll('a').forEach(i => i.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflowY = 'visible';  
-            header.style.background = '';
+            header.style.background = `url(${BackgroundStars}), linear-gradient(180deg, #0F172B 0%, #5413C1 64.58%)`;
         }))
 
         function resetToDefault(){
