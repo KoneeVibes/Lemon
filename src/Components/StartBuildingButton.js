@@ -18,6 +18,15 @@ const Button = styled.button`
       text-decoration: none;
       color: #FFF;
     }
+
+    @media (max-width: 420px){
+      font-size: 15px;
+      line-height: 20px;
+      border-radius: 50px;
+      width: 126px;
+      height: 30px;
+    }
+
 `
 
 const StartBuildingButton = ({text}) => {

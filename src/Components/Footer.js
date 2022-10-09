@@ -27,6 +27,10 @@ const FooterWrapper = styled.footer`
     div img{
         margin-right: 1em;
     }
+
+    @media (max-width: 420px){
+        display: block;
+    }
 `
 
 const Footer = () => {

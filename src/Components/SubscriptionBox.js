@@ -67,6 +67,20 @@ const SubscriptionBoxWrapper = styled.div`
         overflow-X: hidden;
     }
 
+    @media(max-width: 420px){
+
+        h2{
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        p{
+            font-size: 12px;
+            line-height: 28px;
+        }
+
+    }
+
 `
 
 const SubscriptionBox = () => {

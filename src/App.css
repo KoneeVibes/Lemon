@@ -4,5 +4,4 @@ html, body {
   box-sizing: border-box;
   color: #FFFFFF;
   height: 100%;
-  --min-navbar-height: 100px;
 }

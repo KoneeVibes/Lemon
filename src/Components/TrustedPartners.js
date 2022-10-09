@@ -6,20 +6,11 @@ import RabbitHoleLogo from '../Assets/RabbitHoleLogo.png'
 
 const TrustedPartnersWrapper = styled.div`
     padding: 0 136.57px;
-    // text-align: center;
 
     .logos{
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        
-        // responsive screen design to make it's content justified;
-        // justify-content: center;
-        
-    }
-
-    .logos > :first-child{
-        // margin-left: -2em;
     }
 
     .logos img{
@@ -31,6 +22,10 @@ const TrustedPartnersWrapper = styled.div`
         font-size: 27px;
         font-weight: 500;
         line-height: 33px;
+    }
+
+    @media (max-width: 420px){
+        padding: 0 40px;
     }
 `
 

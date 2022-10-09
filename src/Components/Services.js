@@ -29,7 +29,7 @@ const ServicesWrapper = styled.div`
         color: #FFFFFF6B;
     }
 
-    @media(max-width: 768px){
+    @media(max-width: 875px){
         .row-top, .row-bottom{
             display: block
         }

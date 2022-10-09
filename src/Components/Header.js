@@ -10,6 +10,7 @@ const HeaderWrapper = styled.header`
      
     background-image: url(${BackgroundStars}), linear-gradient(180deg, #0F172B 0%, #5413C1 64.58%);
     padding: 30px 136.57px;
+    --min-navbar-height: 100px;
 
     nav{
         display: flex;
@@ -95,6 +96,9 @@ const HeaderWrapper = styled.header`
     }
 
     @media (max-width: 1440px){
+
+        padding: 30px 80px;
+
         .hamburger{
             display: block;     
         }
@@ -140,6 +144,57 @@ const HeaderWrapper = styled.header`
         .header-main{
             display: block;
             align-items: center;
+        }
+
+    }
+
+    @media (min-width: 775px) and (max-width: 1090px){
+
+        padding: 30px 80px;
+
+        h1{
+            font-size: 60px;
+            line-height: 75px;
+        }
+
+        p{
+            font-size: 19px;
+            line-height: 35px;
+        }
+    }
+
+    // standard mobile design
+    @media (max-width: 420px){
+
+        padding: 0px 20px;
+
+        h1{
+            font-size: 25px;
+            line-height: 29.5px;
+        }
+
+        p{
+            font-size: 16px;
+            line-height: 23px;
+        }
+
+        .logo{
+            height: 3em;
+            width: 8.125em;
+        }
+
+        .illustration{
+            height: 27.8125em;
+            width: 17.25em;
+        }
+
+        .header-main img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            padding-top: 15px;
+            padding-bottom: 30px;
         }
 
     }
@@ -195,7 +250,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
   return (
     <HeaderWrapper className='header'>
         <nav>
-            <img src={LemonLogo} alt='logo of lemon'></img>
+            <img src={LemonLogo} alt='logo of lemon' className='logo'></img>
             <ul className={isActive? "active" : null}>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/projects'>Projects</Link></li>
@@ -215,7 +270,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
                 <p>{subText}</p>
                 <StartBuildingButton text={'Work With Us'}/>
             </section>
-            <img src={illustration} alt='illustration'></img>
+            <img src={illustration} alt='illustration' className='illustration'></img>
         </div>
     </HeaderWrapper>
   )

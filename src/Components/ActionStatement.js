@@ -20,8 +20,34 @@ const ActionStatementWrapper = styled.div`
         line-height: 38px;
     }
 
-    @media(max-width: 768px){
+    @media(max-width: 1440px){
         display: block;
+    }
+
+    @media (max-width: 850px){
+
+      img{
+        height: 12.0625em;
+        width: 11.375em;
+      }
+
+    }
+
+    @media (max-width: 420px){
+
+      margin: 136.57px 40px;
+
+      h3{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+      }
+
+      img{
+        height: 12.0625em;
+        width: 11.375em;
+      }
+
     }
 
 `

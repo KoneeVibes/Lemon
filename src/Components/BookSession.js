@@ -44,9 +44,29 @@ const BookSessionWrapper = styled.div`
         display: block;
     }
 
+    @media (max-width: 420px){
+        h2{
+            font-size: 20px;
+            line-height: 29px;
+        }
+
+        p{
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        .calendly-booking{
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
 `
 
 const BookSession = () => {
+
+
   return (
     <BookSessionWrapper id='book-a-session'>
         <div className='text-content'>
@@ -55,7 +75,7 @@ const BookSession = () => {
         </div>
 
         <div className='calendly-booking'>
-            <InlineWidget url="https://calendly.com/lemondesigns86/30min" />
+            <InlineWidget url="https://calendly.com/lemondesigns86/30min"/>
         </div>
     </BookSessionWrapper>
   )

@@ -42,6 +42,29 @@ const ActionWrapper = styled.div`
       }
 
     }
+
+    @media (max-width: 420px){
+      
+      h2{
+        font-size: 25px;
+        line-height: 29px;
+      }
+
+      p{
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .action-box{
+        padding: 1em 2em;
+        margin: 0 40px;
+      }
+
+      img{
+        margin: 0 40px;
+      }
+
+    }
     
 `
 
