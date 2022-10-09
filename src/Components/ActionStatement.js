@@ -20,6 +20,10 @@ const ActionStatementWrapper = styled.div`
         line-height: 38px;
     }
 
+    @media(max-width: 768px){
+        display: block;
+    }
+
 `
 
 const ActionStatement = () => {

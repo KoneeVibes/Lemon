@@ -44,6 +44,12 @@ const VideosWrapper = styled.section`
         justify-content: center;
     }
 
+    @media (max-width: 768px){
+        .row-top, .row-bottom{
+            display: block;
+        }
+    }
+
 `
 
 const Videos = () => {

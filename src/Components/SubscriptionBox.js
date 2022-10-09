@@ -63,11 +63,15 @@ const SubscriptionBoxWrapper = styled.div`
         line-height: 18px;
     }
 
+    @media(max-width: 1440px){
+        overflow-X: hidden;
+    }
+
 `
 
 const SubscriptionBox = () => {
 
-    const MY_FORM_ID = `${process.env.REACT_APP_CONVERTKIT}`
+    const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`)
 
     const config = {
         formId: MY_FORM_ID,
@@ -84,6 +88,8 @@ const SubscriptionBox = () => {
     useEffect(() => {
 
         const standardText = document.querySelector('.width').textContent;
+        const fontSize = getComputedStyle(document.querySelector('.width')).fontSize;
+        const font = getComputedStyle(document.querySelector('.width')).fontFamily;
         const inputBox = document.querySelector('.form');
 
         function displayTextWidth(text, font) {
@@ -91,11 +97,11 @@ const SubscriptionBox = () => {
             let context = canvas.getContext("2d");
             context.font = font;
             let metrics = context.measureText(text);
-            inputBox.style.width = metrics.width + "px"
+            inputBox.style.width = metrics.width + "px";
             return metrics.width;
         }
 
-        displayTextWidth(standardText, "24px Inter")
+        displayTextWidth(standardText, `${fontSize} ${font}`)
         
     })
 
@@ -104,7 +110,7 @@ const SubscriptionBox = () => {
             <div>
                 <h2>Never miss a drop</h2>
                 <p className='width'>Subscribe for the latest news, drops & collectibles</p>
-                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
+                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config}/>
             </div>
         </SubscriptionBoxWrapper>
     )

@@ -8,18 +8,12 @@ const ServicesWrapper = styled.div`
     .row-top{
         display: flex;
         margin-bottom: 1em;
+        gap: 80px;
     }
 
     .row-bottom{
         display: flex;
-    }
-
-    .row-top > :last-child, .row-bottom > :last-child{
-        margin-right: 0;
-    }
-
-    .row-top div, .row-bottom div{
-        margin-right: 60px;
+        gap: 80px;
     }
 
     h2{
@@ -33,6 +27,12 @@ const ServicesWrapper = styled.div`
         font-size: 17px;
         font-weight: 400;
         color: #FFFFFF6B;
+    }
+
+    @media(max-width: 768px){
+        .row-top, .row-bottom{
+            display: block
+        }
     }
 
 `

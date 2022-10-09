@@ -34,6 +34,14 @@ const ActionWrapper = styled.div`
         position: relative;
         top: -0.531em;
     }
+
+    @media(max-width: 768px){
+      
+      .action-box{
+        display: block;
+      }
+
+    }
     
 `
 

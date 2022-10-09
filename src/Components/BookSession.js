@@ -40,6 +40,10 @@ const BookSessionWrapper = styled.div`
         line-height: 28px;
     }
 
+    @media (max-width: 768px){
+        display: block;
+    }
+
 `
 
 const BookSession = () => {
