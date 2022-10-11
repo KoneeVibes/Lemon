@@ -13,6 +13,7 @@ const SubscriptionBoxWrapper = styled.div`
         font-size: 50px;
         font-weight: 600;
         margin-block-end: 0;
+        line-height: 50px;
     }
 
     .form{
@@ -36,6 +37,7 @@ const SubscriptionBoxWrapper = styled.div`
 
     .form button{
         background: #EB5757;
+        border: none;
         border-radius: 31px;
         padding: 10px 26.5px;
         font-family: Poppins;
@@ -67,7 +69,25 @@ const SubscriptionBoxWrapper = styled.div`
         overflow-X: hidden;
     }
 
-    @media(max-width: 420px){
+    @media(max-width: 1093px){
+
+        h2{
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        p{
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        #ck-email{
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    @media(max-width: 680px){
 
         h2{
             font-size: 30px;
@@ -79,13 +99,72 @@ const SubscriptionBoxWrapper = styled.div`
             line-height: 28px;
         }
 
+        #ck-email{
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    @media (max-width: 360px){
+        h2{
+            font-size: 20px;
+            line-height: 50px;
+        }
+
+        p{
+            font-size: 7px;
+            line-height: 30px;
+        }
+
+        #ck-email{
+            font-size: 8px;
+            line-height: 12px;
+        }
+
+        .form button{
+            width: 50%;
+            font-size: 8px;
+            line-height: 50px;
+            padding: 0px;
+        }
+    }
+
+    @media (max-width: 279px){
+        h2{
+            font-size: 7px;
+            line-height: 10px;
+        }
+
+        p{
+            font-size: 3px;
+            line-height: 5px
+        }
+
+        .form button{
+            padding: 2px 4px;
+            font-size: 5px;
+            line-height: 15px;
+        }
+
+        #ck-email {
+            font-size: 5px;
+            line-height: 5px
+        }
+
+        .form{
+            padding-left: 10px;
+        }
+    }
+
+    @media (max-width: 100px){
+        display: none;
     }
 
 `
 
 const SubscriptionBox = () => {
 
-    const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`)
+    const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`);
 
     const config = {
         formId: MY_FORM_ID,
@@ -98,7 +177,7 @@ const SubscriptionBox = () => {
             window.location.reload();
         }
     }
-
+    
     useEffect(() => {
 
         const standardText = document.querySelector('.width').textContent;
@@ -111,20 +190,22 @@ const SubscriptionBox = () => {
             let context = canvas.getContext("2d");
             context.font = font;
             let metrics = context.measureText(text);
-            inputBox.style.width = metrics.width + "px";
+            inputBox.style.width = metrics.width + "px"; 
             return metrics.width;
         }
 
-        displayTextWidth(standardText, `${fontSize} ${font}`)
-        
+        displayTextWidth(standardText, `${fontSize} ${font}`);
     })
+
+    window.addEventListener('resize', () => window.location.reload());
+
 
     return (
         <SubscriptionBoxWrapper id='newsletter-subscription'>
             <div>
                 <h2>Never miss a drop</h2>
                 <p className='width'>Subscribe for the latest news, drops & collectibles</p>
-                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config}/>
+                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
             </div>
         </SubscriptionBoxWrapper>
     )

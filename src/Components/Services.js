@@ -29,9 +29,57 @@ const ServicesWrapper = styled.div`
         color: #FFFFFF6B;
     }
 
-    @media(max-width: 875px){
+    @media(min-width: 1024px) and (max-width: 1093px){
+        padding: 100px 70px;
+
+        .row-top, .row-bottom{
+            gap: 50px;
+        }
+    }
+
+    @media (max-width: 1023px){
+        padding: 100px 70px;
+
         .row-top, .row-bottom{
             display: block
+        }
+
+        h2{
+            font-size: 20px;
+            line-height: 28.6px;
+        }
+    }
+
+    @media(max-width: 680px){
+        padding: 100px 40px;
+
+        h2{
+            font-size: 20px;
+            line-height: 28.6px;
+        }
+    }
+
+    @media (max-width: 279px){
+        padding: 20px 2px;
+
+        h2{
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        p{
+            font-size: 8px;
+        }
+    }
+
+    @media (max-width: 100px){
+        h2{
+            font-size: 5px;
+            line-height: 10px;
+        }
+
+        p{
+            font-size: 4px;
         }
     }
 

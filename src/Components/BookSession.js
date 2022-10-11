@@ -40,19 +40,40 @@ const BookSessionWrapper = styled.div`
         line-height: 28px;
     }
 
-    @media (max-width: 768px){
-        display: block;
+    @media (max-width: 1093px){
+        flex-direction: column;
+        gap: 3em;
+        padding: 100px;
+        padding-bottom: 0;
+        
+
+        .text-content{
+            position: relative;
+            // right: 6em;
+        }
+
     }
 
-    @media (max-width: 420px){
+    @media (min-width: 680px){
+
+    }
+
+    @media (max-width: 680px){
+
+        padding: 50px 70px 0px;
+
         h2{
             font-size: 20px;
             line-height: 29px;
         }
 
-        p{
+        .text-content p{
             font-size: 10px;
             line-height: 20px;
+        }
+
+        .text-content{
+            margin-right: 0;
         }
 
         .calendly-booking{
@@ -62,10 +83,17 @@ const BookSessionWrapper = styled.div`
 
     }
 
+    @media (min-width: 340px) and (max-width: 470px){
+        padding: 100px 40px 0px;
+    }
+
+    @media (max-width: 340px){
+        display: none;
+    }
+
 `
 
 const BookSession = () => {
-
 
   return (
     <BookSessionWrapper id='book-a-session'>
@@ -75,7 +103,7 @@ const BookSession = () => {
         </div>
 
         <div className='calendly-booking'>
-            <InlineWidget url="https://calendly.com/lemondesigns86/30min"/>
+            <InlineWidget url="https://calendly.com/lemondesigns86/30min" id='test'/>
         </div>
     </BookSessionWrapper>
   )

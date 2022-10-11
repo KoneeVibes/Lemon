@@ -17,7 +17,7 @@ const ProjectsWrapper = styled.div`
 const Projects = () => {
   return (
     <ProjectsWrapper>
-      <Header mainText={'Designing for humans to help brands grow.'} subText={'A design agency creating social media designs/animated contents for Blockchain projects across the world'} illustration={ActionStatementIllustration} padding={'90px 0 30px 0'} />
+      <Header mainText={'Designing for humans to help brands grow.'} subText={'A design agency creating social media designs/animated contents for Blockchain projects across the world'} illustration={ActionStatementIllustration} padding={(window.screen.availWidth >= 1440) ? '90px 0 30px 0' : "30px 0"} />
           <MarqueeContainer bgColor={'#1B1232'} />
           <Videos/>
           <Action bgColor={'#FFFFFF'} src={ProjectsActionBorder} color={'#020203'}/>

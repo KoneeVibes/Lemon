@@ -19,7 +19,7 @@ const HomeWrapper = styled.div`
 const Home = () => {
   return (
     <HomeWrapper>
-          <Header mainText={'The future of blockchain design'} subText={'A design agency creating social media designs/animated contents for Blockchain projects across the world'} illustration = {HeaderIllustrationI} padding={'30px 0'}/>
+      <Header mainText={'The future of blockchain design'} subText={'A design agency creating social media designs/animated contents for Blockchain projects across the world'} illustration={HeaderIllustrationI} padding={(window.screen.availWidth >= 680)?'30px 0': ""}/>
           <MarqueeContainer bgColor={'#1B1232'}/>
           <ActionStatement/>
           <TrustedPartners/>

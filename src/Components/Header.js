@@ -95,7 +95,19 @@ const HeaderWrapper = styled.header`
         justify-content: space-between;
     }
 
-    @media (max-width: 1440px){
+    @media (min-width: 1023px) and (max-width: 1440px){
+        nav ul{
+            font-size: 18px;
+            line-height: 30px;
+            gap: 50px;
+        }
+
+        .illustration{
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 1023px){
 
         padding: 30px 80px;
 
@@ -146,9 +158,19 @@ const HeaderWrapper = styled.header`
             align-items: center;
         }
 
+        .illustration{
+            height: auto;
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
     }
 
-    @media (min-width: 775px) and (max-width: 1090px){
+    @media (min-width: 793px) and (max-width: 1090px){
 
         padding: 30px 80px;
 
@@ -163,8 +185,38 @@ const HeaderWrapper = styled.header`
         }
     }
 
-    // standard mobile design
-    @media (max-width: 420px){
+    @media (min-width: 420px) and (max-width: 793px){
+        
+        padding: 15px 50px;
+
+        h1{
+            font-size: 40px;
+            line-height: 45px;
+        }
+
+        p{
+            font-size: 17.5px;
+            line-height: 30px;
+
+        }
+    }
+
+    @media (min-width: 420px) and (max-width: 515px){
+
+        padding: 0 30px;
+
+        .illustration{
+            height: auto;
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 570px){
 
         padding: 0px 20px;
 
@@ -176,29 +228,69 @@ const HeaderWrapper = styled.header`
         p{
             font-size: 16px;
             line-height: 23px;
+            margin: 1em 0;
         }
 
         .logo{
-            height: 3em;
-            width: 8.125em;
+            height: auto;
+            width: 30%;
         }
 
         .illustration{
-            height: 27.8125em;
-            width: 17.25em;
-        }
-
-        .header-main img{
+            height: auto;
+            width: 80%;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
             padding-top: 15px;
             padding-bottom: 30px;
         }
 
     }
+
+    @media (max-width: 279px){
+        padding: 0px 2px;
+
+        h1{
+            font-size: 10px;
+            line-height: 11.5px;
+        }
+
+        p{
+            font-size: 8px;
+            line-height: 10px;
+            margin: 1em 0;
+        }
+
+        .bar{
+            margin: 1px auto;
+            width: 15px
+        }
+
+        nav ul{
+            font-size: 7px;
+            padding-top: 0px;
+            gap: 10px;
+        }
+    }
     
+    @media (max-width: 100px){
+        h1{
+            font-size: 7px;
+            line-height: 7.5px;
+        }
+
+        p{
+            font-size: 4px;
+            line-height: 7px;
+            margin: 1em 0;
+        }
+
+        .bar{
+            margin: 1px auto;
+            width: 15px
+        }
+    }
 `
 
 const Header = ({mainText, subText, illustration, padding}) => {
@@ -264,7 +356,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
                 <span className='bar'></span>
             </div>
         </nav>
-        <div className='header-main' style={{padding: padding}}>
+          <div className='header-main' style={{ padding: (window.screen.availWidth <= 680)? '': padding}}>
             <section>
                 <h1>{mainText}</h1>
                 <p>{subText}</p>

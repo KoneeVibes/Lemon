@@ -7,6 +7,7 @@ import video4 from '../Assets/Animation4.mp4'
 
 const VideosWrapper = styled.section`
     padding: 136.57px;
+    --standard-gap: 6em;
 
     h3{
         font-family: Poppins;
@@ -21,22 +22,19 @@ const VideosWrapper = styled.section`
         font-weight: 400;
         line-height: 23px;
         color: #FFFFFF6B;
-        width: 356px;
     }
 
     .row-top{
         display: flex;
         align-items: center;
-        margin-bottom: 4em;
+        gap: var(--standard-gap);
+        margin-bottom: var(--standard-gap);
     }
 
     .row-bottom{
         display: flex;
         align-items: center;
-    }
-
-    .row-top > :first-child, .row-bottom > :first-child{
-        margin-right: 6em;
+        gap: var(--standard-gap);
     }
 
     .center-wrapper{
@@ -44,9 +42,47 @@ const VideosWrapper = styled.section`
         justify-content: center;
     }
 
-    @media (max-width: 768px){
-        .row-top, .row-bottom{
-            display: block;
+    @media (max-width: 1023px){
+
+        .row-top, .row-bottom, .center-wrapper{
+            flex-direction: column;
+        }
+        video{
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 680px){
+        padding: 100px 40px;
+        --standard-gap: 4em;
+
+        video{
+            width: 100%;
+        }
+
+        h3{
+            font-size: 20px;
+            line-height: 29px;
+        }
+
+        p{
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    @media (max-width: 100px){
+        padding: 2px;
+        --standard-gap: 1em;
+
+        h3{
+          font-size: 4px;
+          line-height: 10px;
+        }
+
+        p{
+          font-size: 4px;
+          line-height: 6px;
         }
     }
 
@@ -68,12 +104,12 @@ const Videos = () => {
         <div className='center-wrapper'>
             <div className='row-top'>
                 <div>
-                    <video src={video1} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <video src={video1} alt='video' width="80%" height="auto" muted="muted" loop></video>
                     <h3>User interface</h3>
                     <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
                 </div>
                 <div>
-                    <video src={video2} alt='video' width="570px" height="480px" muted="muted" loop ></video>
+                    <video src={video2} alt='video' width="80%" height="auto" muted="muted" loop ></video>
                     <h3>User interface</h3>
                     <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
                 </div>
@@ -82,12 +118,12 @@ const Videos = () => {
         <div className='center-wrapper'>
             <div className='row-bottom'>
                 <div>
-                    <video src={video3} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <video src={video3} alt='video' width="80%" height="auto" muted="muted" loop></video>
                     <h3>User interface</h3>
                     <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
                 </div>
                 <div>
-                    <video src={video4} alt='video' width="570px" height="480px" muted="muted" loop></video>
+                    <video src={video4} alt='video' width="80%" height="auto" muted="muted" loop></video>
                     <h3>User interface</h3>
                     <p>With our experienced team of professionals, you can expect sound ideas and solutions in a short term.</p>
                 </div>

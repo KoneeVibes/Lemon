@@ -27,6 +27,10 @@ const Button = styled.button`
       height: 30px;
     }
 
+    @media (max-width: 279px){
+      display: none;
+    }
+
 `
 
 const StartBuildingButton = ({text}) => {

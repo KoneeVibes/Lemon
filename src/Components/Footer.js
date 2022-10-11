@@ -22,14 +22,52 @@ const FooterWrapper = styled.footer`
     div{
         display: flex;
         align-items: center;
+        justify-content: center;
+        gap: 1em;
     }
 
-    div img{
-        margin-right: 1em;
+    @media (max-width: 1093px){
+        padding: 16px 40px;
     }
 
-    @media (max-width: 420px){
-        display: block;
+    @media (max-width: 680px){
+        flex-direction: column-reverse; 
+        webkit-align-items: flex-start;
+        align-items: flex-start;
+
+        p{
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        div{
+            justify-content: flex-start;
+        }
+
+        div img{
+            width: 5%;
+        }
+    }
+
+    @media (max-width: 360px){
+
+        p{
+            font-size: 7px;
+            line-height: 15px;
+        }
+    }
+
+    @media (max-width: 100px){
+        padding: 8px 10px;
+
+        p{
+            font-size: 4px;
+            line-height: 10px;
+        }  
+
+        div{
+            gap: 2px;
+        }
     }
 `
 

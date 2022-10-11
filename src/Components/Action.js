@@ -35,15 +35,20 @@ const ActionWrapper = styled.div`
         top: -0.531em;
     }
 
-    @media(max-width: 768px){
+    @media (min-width: 680px) and (max-width: 1093px){
       
       .action-box{
         display: block;
+        padding: 1em 2em;
+        margin: 0 75px;
       }
 
+      img{
+        margin: 0 75px;
+      }
     }
 
-    @media (max-width: 420px){
+    @media (max-width: 680px){
       
       h2{
         font-size: 25px;
@@ -56,6 +61,7 @@ const ActionWrapper = styled.div`
       }
 
       .action-box{
+        display: block;
         padding: 1em 2em;
         margin: 0 40px;
       }
@@ -64,6 +70,41 @@ const ActionWrapper = styled.div`
         margin: 0 40px;
       }
 
+    }
+
+    @media (max-width: 279px){
+        .action-box{
+          margin: 0px 5px;
+          padding: 8px;
+        }
+
+        h2{
+          font-size: 10px;
+          line-height: 15px;
+        }
+
+        p{
+          font-size: 7px;
+          line-height: 15px;
+        }
+
+        img{
+          display: none;
+        }
+    }
+
+    @media (max-width: 100px){
+        padding: 2px;
+
+        h2{
+          font-size: 4px;
+          line-height: 10px;
+        }
+
+        p{
+          font-size: 4px;
+          line-height: 6px;
+        }
     }
     
 `

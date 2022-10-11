@@ -22,20 +22,53 @@ const ActionStatementWrapper = styled.div`
 
     @media(max-width: 1440px){
         display: block;
+
+        img{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 3em;
+          height: auto;
+          width: 70%;
+        }
     }
 
-    @media (max-width: 850px){
+    @media (min-width: 680px) and (max-width: 1093px){
+
+      margin: 80px 70px;
+      padding: 2em 3em;
+      border-radius: 30px;
+
+    }
+
+    @media (min-width: 500px) and (max-width: 850px){
+
+      padding: 2em 3em;
+      border-radius: 20px;
 
       img{
-        height: 12.0625em;
-        width: 11.375em;
+        height: auto;
+        width: 50%;
+        padding-top: 2em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
 
+      h3{
+        font-size: 18px;
+        font-weight: 500px;
+      }
     }
 
-    @media (max-width: 420px){
+    @media (max-width: 680px){
+      margin: 60px 40px;
+    }
 
-      margin: 136.57px 40px;
+    @media (max-width: 500px){
+
+      padding: 2em 1em;
+      border-radius: 10px;
 
       h3{
         font-size: 14px;
@@ -44,10 +77,33 @@ const ActionStatementWrapper = styled.div`
       }
 
       img{
-        height: 12.0625em;
-        width: 11.375em;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        padding-top: 1em;
       }
 
+    }
+
+    @media (max-width: 279px){
+        margin: 0px 2px;
+        padding: 8px;
+
+        h3{
+          font-size: 7px;
+          line-height: 15px;
+        }
+    }
+
+    @media (max-width: 100px){
+        padding: 4px;
+
+        h3{
+          font-size: 4px;
+          line-height: 6px;
+        }
     }
 
 `

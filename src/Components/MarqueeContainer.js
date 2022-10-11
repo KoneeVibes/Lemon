@@ -10,6 +10,12 @@ const MarqueeWrapper = styled.marquee`
         font-size: 27px;
         font-weight: 500;
     }
+
+    @media (max-width: 420px){
+        font-size: 17px;
+        line-height: 21px;
+    }
+    
 `
 
 const MarqueeContainer = ({bgColor}) => {
