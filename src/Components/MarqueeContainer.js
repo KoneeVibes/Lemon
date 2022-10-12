@@ -5,6 +5,10 @@ const MarqueeWrapper = styled.marquee`
 
     height: 91px;
 
+    .hidden-text{
+        display: none;
+    }
+
     h4{
         font-family: Clash Display;
         font-size: 27px;
@@ -21,7 +25,7 @@ const MarqueeWrapper = styled.marquee`
 const MarqueeContainer = ({bgColor}) => {
   return (
     <MarqueeWrapper style={{backgroundColor: bgColor}}>
-      <h4>Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency.</h4>
+      <h4 className='marquee'>Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency. Award winning design agency.</h4>
     </MarqueeWrapper>
   )
 }

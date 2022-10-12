@@ -311,11 +311,15 @@ const Header = ({mainText, subText, illustration, padding}) => {
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('ul');
         const header = document.querySelector('.header');
+        const marquees = document.querySelectorAll('.marquee');
 
         if (isActive) {
-            header.style.background = '#020203'
+            header.style.background = '#020203';
+            marquees.forEach(marquee => marquee.classList.add('hidden-text'));
          }else{
             header.style.background = `url(${BackgroundStars}), linear-gradient(180deg, #0F172B 0%, #5413C1 64.58%)`;
+            marquees.forEach(marquee => marquee.classList.remove
+                ('hidden-text'));
          } 
 
         document.querySelectorAll('a').forEach(i => i.addEventListener('click', () => {
