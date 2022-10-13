@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import ConvertKitForm from 'convertkit-react'
 
@@ -165,10 +165,12 @@ const SubscriptionBoxWrapper = styled.div`
 const SubscriptionBox = () => {
 
     const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`);
+    const [testy, settesty] = useState(null)
 
     const config = {
         formId: MY_FORM_ID,
         emailPlaceholder: 'Enter your email address',
+        width: testy
     }
 
     // window.onload = function () {
@@ -177,12 +179,14 @@ const SubscriptionBox = () => {
     //         window.location.reload();
     //     }
     // }
+
+    let standard = useRef(null)
     
     useEffect(() => {
 
-        const standardText = document.querySelector('.width').textContent;
-        const fontSize = getComputedStyle(document.querySelector('.width')).fontSize;
-        const font = getComputedStyle(document.querySelector('.width')).fontFamily;
+        const standardText = standard.current.textContent;
+        const fontSize = getComputedStyle(standard.current).fontSize;
+        const font = getComputedStyle(standard.current).fontFamily;
         const inputBox = document.querySelector('.form');
 
         function displayTextWidth(text, font) {
@@ -191,11 +195,12 @@ const SubscriptionBox = () => {
             context.font = font;
             let metrics = context.measureText(text);
             inputBox.style.width = metrics.width + "px"; 
+            settesty(metrics.width + "px")
             return metrics.width;
         }
 
         displayTextWidth(standardText, `${fontSize} ${font}`);
-    })
+    }, [])
 
     // window.addEventListener('resize', () => window.location.reload());
 
@@ -204,7 +209,7 @@ const SubscriptionBox = () => {
         <SubscriptionBoxWrapper id='newsletter-subscription'>
             <div>
                 <h2>Never miss a drop</h2>
-                <p className='width'>Subscribe for the latest news, drops & collectibles</p>
+                <p className='width' ref={standard}>Subscribe for the latest news, drops & collectibles</p>
                 <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
             </div>
         </SubscriptionBoxWrapper>
