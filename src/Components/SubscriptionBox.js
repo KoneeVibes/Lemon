@@ -174,7 +174,7 @@ const SubscriptionBox = () => {
     let standard = useRef(null);
 
     useEffect(() => {
-        
+
         const inputBox = document.querySelector('.form');
 
         function displayTextWidth(text, font) {
@@ -186,8 +186,10 @@ const SubscriptionBox = () => {
             return metrics.width;
         }
 
-        displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+        window.onload = displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+
         window.addEventListener('resize', () => displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`));
+        
     }, [])
 
 
