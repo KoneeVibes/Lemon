@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import ConvertKitForm from 'convertkit-react'
 
@@ -165,28 +165,16 @@ const SubscriptionBoxWrapper = styled.div`
 const SubscriptionBox = () => {
 
     const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`);
-    const [testy, settesty] = useState(null)
 
     const config = {
         formId: MY_FORM_ID,
         emailPlaceholder: 'Enter your email address',
-        width: testy
     }
 
-    // window.onload = function () {
-    //     if (!window.location.hash) {
-    //         window.location = window.location + '#loaded';
-    //         window.location.reload();
-    //     }
-    // }
+    let standard = useRef(null);
 
-    let standard = useRef(null)
-    
     useEffect(() => {
-
-        const standardText = standard.current.textContent;
-        const fontSize = getComputedStyle(standard.current).fontSize;
-        const font = getComputedStyle(standard.current).fontFamily;
+        
         const inputBox = document.querySelector('.form');
 
         function displayTextWidth(text, font) {
@@ -194,22 +182,21 @@ const SubscriptionBox = () => {
             let context = canvas.getContext("2d");
             context.font = font;
             let metrics = context.measureText(text);
-            inputBox.style.width = metrics.width + "px"; 
-            settesty(metrics.width + "px")
+            inputBox.style.width = metrics.width + "px";
             return metrics.width;
         }
 
-        displayTextWidth(standardText, `${fontSize} ${font}`);
+        displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+        window.addEventListener('resize', () => displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`));
     }, [])
 
-    // window.addEventListener('resize', () => window.location.reload());
 
 
     return (
         <SubscriptionBoxWrapper id='newsletter-subscription'>
             <div>
                 <h2>Never miss a drop</h2>
-                <p className='width' ref={standard}>Subscribe for the latest news, drops & collectibles</p>
+                <p ref={standard}>Subscribe for the latest news, drops & collectibles</p>
                 <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
             </div>
         </SubscriptionBoxWrapper>
