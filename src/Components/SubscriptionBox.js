@@ -185,14 +185,14 @@ const SubscriptionBox = () => {
             inputBox.style.width = metrics.width + "px";
             return metrics.width;
         }
-
-        window.onload = displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+        
+        window.addEventListener('load', () => {
+            displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+            console.log('page is fully loaded');
+        })
 
         window.addEventListener('resize', () => displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`));
-        
     }, [])
-
-
 
     return (
         <SubscriptionBoxWrapper id='newsletter-subscription'>
