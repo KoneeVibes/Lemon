@@ -31,7 +31,7 @@ const TrustedPartnersWrapper = styled.div`
         }
 
         .logos img{
-            width: 15%;
+            width: 30%;
             height: auto;
         }
     }
@@ -40,11 +40,11 @@ const TrustedPartnersWrapper = styled.div`
         padding: 0 70px;
 
         .logos{
-            gap: 0.5em;
+            gap: 1em;
         }
 
         .logos img{
-            width: 20%;
+            width: 25%;
             height: auto;
         }
 
@@ -62,7 +62,7 @@ const TrustedPartnersWrapper = styled.div`
         }
 
         .logos img{
-            width: 25%;
+            width: 20%;
             height: auto;
         }
 
@@ -81,7 +81,7 @@ const TrustedPartnersWrapper = styled.div`
         }
 
         .logos img{
-            width: 15%;
+            width: 20%;
             height: auto;
         }
 

@@ -154,7 +154,7 @@ const HeaderWrapper = styled.header`
         }
 
         .header-main{
-            display: block;
+            flex-direction: column;
             align-items: center;
         }
 
@@ -228,12 +228,12 @@ const HeaderWrapper = styled.header`
         p{
             font-size: 16px;
             line-height: 23px;
-            margin: 1em 0;
+            margin: 1.4em 0;
         }
 
         .logo{
             height: auto;
-            width: 30%;
+            width: 60%;
         }
 
         .illustration{
@@ -244,6 +244,10 @@ const HeaderWrapper = styled.header`
             margin-right: auto;
             padding-top: 15px;
             padding-bottom: 30px;
+        }
+
+        .header-main section{
+            margin-right: 0;
         }
 
     }
@@ -346,7 +350,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
   return (
     <HeaderWrapper className='header'>
         <nav>
-            <img src={LemonLogo} alt='logo of lemon' className='logo'></img>
+            <Link to='/'><img src={LemonLogo} alt='logo of lemon' className='logo'></img></Link>
             <ul className={isActive? "active" : null}>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/projects'>Projects</Link></li>
@@ -360,7 +364,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
                 <span className='bar'></span>
             </div>
         </nav>
-          <div className='header-main' style={{ padding: (window.screen.availWidth <= 680)? '': padding}}>
+          <div className='header-main' style={{ padding: (window.screen.availWidth < 360)? '': padding}}>
             <section>
                 <h1>{mainText}</h1>
                 <p>{subText}</p>

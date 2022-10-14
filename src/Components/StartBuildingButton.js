@@ -20,7 +20,7 @@ const Button = styled.button`
     }
 
     @media (max-width: 420px){
-      font-size: 15px;
+      font-size: 12px;
       line-height: 20px;
       border-radius: 50px;
       width: 126px;
