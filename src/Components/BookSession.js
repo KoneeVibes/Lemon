@@ -95,6 +95,8 @@ const BookSessionWrapper = styled.div`
 
 const BookSession = () => {
 
+    const CALENDLY = process.env.REACT_APP_CALENDLY;
+
   return (
     <BookSessionWrapper id='book-a-session'>
         <div className='text-content'>
@@ -103,7 +105,7 @@ const BookSession = () => {
         </div>
 
         <div className='calendly-booking'>
-            <InlineWidget url="https://calendly.com/lemondesigns86/30min" id='test'/>
+            <InlineWidget url={CALENDLY} id='test'/>
         </div>
     </BookSessionWrapper>
   )

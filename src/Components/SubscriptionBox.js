@@ -164,10 +164,10 @@ const SubscriptionBoxWrapper = styled.div`
 
 const SubscriptionBox = () => {
 
-    const MY_FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`);
+    const FORM_ID = parseFloat(`${process.env.REACT_APP_CONVERTKIT}`);
 
     const config = {
-        formId: MY_FORM_ID,
+        formId: FORM_ID,
         emailPlaceholder: 'Enter your email address',
     }
 
@@ -200,7 +200,7 @@ const SubscriptionBox = () => {
             <div>
                 <h2>Never miss a drop</h2>
                 <p ref={standard}>Subscribe for the latest news, drops & collectibles</p>
-                <ConvertKitForm formId={MY_FORM_ID} className='form' {...config} />
+                <ConvertKitForm formId={FORM_ID} className='form' {...config} />
             </div>
         </SubscriptionBoxWrapper>
     )
