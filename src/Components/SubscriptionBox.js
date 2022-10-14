@@ -186,6 +186,8 @@ const SubscriptionBox = () => {
             return metrics.width;
         }
 
+        displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
+
         window.addEventListener('load', () => {
             displayTextWidth(standard.current.textContent, `${getComputedStyle(standard.current).fontSize} ${getComputedStyle(standard.current).fontFamily}`);
         })
