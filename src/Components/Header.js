@@ -71,7 +71,7 @@ const HeaderWrapper = styled.header`
     }
 
     a:hover{
-        color: #000;
+        color: #EB5757;
     }
 
     .hamburger{
