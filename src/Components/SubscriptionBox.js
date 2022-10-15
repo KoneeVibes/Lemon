@@ -17,7 +17,6 @@ const SubscriptionBoxWrapper = styled.div`
     }
 
     .form{
-        margin: 0 431px;
         border: 2px solid #FFFFFF;
         border-radius: 37px; 
         padding-left: 1em;
@@ -63,10 +62,6 @@ const SubscriptionBoxWrapper = styled.div`
         font-size: 15px;
         font-weight: 400;
         line-height: 18px;
-    }
-
-    @media(max-width: 1440px){
-        // overflow-X: hidden;
     }
 
     @media(max-width: 1093px){
