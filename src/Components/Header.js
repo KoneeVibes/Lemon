@@ -89,12 +89,6 @@ const HeaderWrapper = styled.header`
         background-color: #FFF;
     }
 
-    .logo-hamburger-flexbox{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
     @media (min-width: 1023px) and (max-width: 1440px){
         nav ul{
             font-size: 18px;
