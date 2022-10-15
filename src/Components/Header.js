@@ -344,8 +344,8 @@ const Header = ({mainText, subText, illustration, padding}) => {
 
         window.addEventListener('resize', resetToDefault);
     })
-
     
+
 
   return (
     <HeaderWrapper className='header'>

@@ -66,7 +66,7 @@ const SubscriptionBoxWrapper = styled.div`
     }
 
     @media(max-width: 1440px){
-        overflow-X: hidden;
+        // overflow-X: hidden;
     }
 
     @media(max-width: 1093px){

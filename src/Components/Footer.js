@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import FacebookIcon from '../Assets/FacebookIcon.png'
+import FacebookIcon from '../Assets/FacebookIcon.svg'
 import TwitterIcon from '../Assets/TwitterIcon.svg'
-import LinkedInIcon from '../Assets/LinkedInIcon.png'
-import InstagramIcon from '../Assets/InstagramIcon.png'
+import LinkedInIcon from '../Assets/LinkedInIcon.svg'
+import InstagramIcon from '../Assets/InstagramIcon.svg'
 
 const FooterWrapper = styled.footer`
     padding: 16px 136.57px;
@@ -28,6 +28,10 @@ const FooterWrapper = styled.footer`
 
     div img:hover{
         background: #EB5757; 
+    }
+
+    img{
+        border-radius: 10px
     }
 
     @media (max-width: 1093px){
