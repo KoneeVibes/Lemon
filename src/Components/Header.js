@@ -328,7 +328,7 @@ const Header = ({mainText, subText, illustration, padding}) => {
         }))
 
         function resetToDefault(){
-            if (window.screen.availWidth >= 1440){
+            if (window.screen.availWidth >= 1023){
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflowY = 'visible';
