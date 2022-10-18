@@ -7,3 +7,7 @@
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} lemonhq\.xyz [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://lemonhq.xyz/$1 [R,L]
